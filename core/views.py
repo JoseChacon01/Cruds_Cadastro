@@ -16,3 +16,6 @@ def cadastrar_produto(request):
         'form_produto': form
     }
     return render (request, 'produto_cadastrar.html', contexto)
+
+def opcao_produto(request):
+    return render   (request, 'opcao.html')  
