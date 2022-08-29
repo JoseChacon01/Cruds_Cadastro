@@ -9,7 +9,9 @@
 <body>
     <h1>Cadastrar Produto</h1>
     <form method="POST">
+        {% csrf_token %}
     {{form_produto}}
+    <p><input type="submit" value="Salvar"/></p>
     </form>
 </body>
 </html>
