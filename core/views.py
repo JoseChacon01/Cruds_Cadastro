@@ -1,5 +1,8 @@
-from django.shortcuts import render
+
+from multiprocessing import contexto
+from django.shortcuts import render, redirect
 from .models import Produto #".models" pois é um arquivo do mesmo diretorio
+from .forms import ProdutoForm
 
 def listar_produtos(request):
     produtos = Produto.objects.all()
@@ -10,4 +13,8 @@ def listar_produtos(request):
 
 
 def cadastrar_produto(request):
-    return render (request, 'produto_cadastrar.html')
+    form = ProdutoForm(request.POST or None)
+    contexto = {
+        'form_produto': form
+    }
+    return render (request, 'produto_cadastrar.html', contexto)
