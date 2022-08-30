@@ -25,4 +25,25 @@ def cadastrar_produto(request):
     }
     return render (request, 'produto_cadastrar.html', contexto)
 
- 
+def editar_produto(request, id):
+    produto = Produto.objects.get(pk=id)
+
+    form = ProdutoForm(request.POST or None, instance=produto)
+
+    if form.is_valid():
+        form.save()
+        return redirect('listar_produtos')
+
+    contexto = {
+        'form_produto': form
+    }
+
+    return render(request, 'produto_cadastrar.html', contexto)
+
+def remover_produto(request, id):
+    produto = Produto.objects.get(pk=id)
+    produto.delete()
+    return redirect('listar_produtos')
+
+# def index(request):
+#     return render(request, 'index.html', contexto)
