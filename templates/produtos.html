@@ -10,8 +10,6 @@
 <body>
     <h1>Produtos</h1>
     
-    <p>Listagem:</p>
-    <h1>CRUDs</h1>
     <p><a href="{% url 'cadastrar_produto' %}"><button type="button" class="btn btn-success">Cadastrar Produto</button></a></p>
 
     <p>Lista de Cursos:</p>
@@ -37,8 +35,8 @@
             <td>{{produto.estilo}}</td>
             <td>{{produto.marca}}</td>
             <td>{{produto.quantidade}}</td>
-            <td><a href=""><button type="button" class="btn btn-primary">EDITAR</button></a></td>
-            <td><a href=""><button type="button" class="btn btn-danger">REMOVER</button></a></td>
+            <td><a href="{% url 'editar_produto' produto.id %}"><button type="button" class="btn btn-primary">EDITAR</button></a></td>
+            <td><a href="{% url 'remover_produto' produto.id %}"><button type="button" class="btn btn-danger">REMOVER</button></a></td>
           </tr>
         </tbody>
       </table>
