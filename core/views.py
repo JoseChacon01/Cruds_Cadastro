@@ -1,5 +1,7 @@
+
 from django.shortcuts import render
 from .models import Produto #".models" pois é um arquivo do mesmo diretorio
+from .forms import ProdutoForm
 
 def listar_produtos(request):
     produtos = Produto.objects.all()
@@ -8,6 +10,12 @@ def listar_produtos(request):
     }
     return render (request, 'produtos.html', contexto)
 
-
 def cadastrar_produto(request):
-    return render (request, 'produto_cadastrar.html')
+    form = ProdutoForm(request.POST or None)
+    contexto = {
+        'form_produto': form
+    }
+    return render (request, 'produto_cadastrar.html', contexto)
+
+def opcao_produto(request):
+    return render   (request, 'opcao.html')  
