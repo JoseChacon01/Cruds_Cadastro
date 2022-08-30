@@ -14,7 +14,7 @@
     {% for produto in todos_produtos %}
 
     <p>
-        Produto2: {{produto.produto}} | 
+        Produto2: {{produto.produto}} | Estilo: {{produto.estilo}} | Marca: {{produto.marca}} | Quantidade: {{produto.quantidade}}
     </p>
 
     <table class="table table-hover">
@@ -30,8 +30,8 @@
         <tbody class="table-group-divider">
           <tr>
             <th scope="row">1</th>
-            <td>{{curso.titulo}}</td>
-            <td>{{curso.vagas}}</td>
+            <td>{{produto.titulo}}</td>
+            <td>{{produto.vagas}}</td>
             <td><a href=""><button type="button" class="btn btn-primary">EDITAR</button></a></td>
             <td><a href=""><button type="button" class="btn btn-danger">REMOVER</button></a></td>
           </tr>
