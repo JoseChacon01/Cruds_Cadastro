@@ -14,11 +14,34 @@
     {% for produto in todos_produtos %}
 
     <p>
-        Produto: {{produto.produto}} | 
+        Produto2: {{produto.produto}} | 
     </p>
+
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Curso</th>
+            <th scope="col">Vagas</th>
+            <th scope="col">Edite</th>
+            <th scope="col">Remova</th>
+          </tr>
+        </thead>
+        <tbody class="table-group-divider">
+          <tr>
+            <th scope="row">1</th>
+            <td>{{curso.titulo}}</td>
+            <td>{{curso.vagas}}</td>
+            <td><a href="{% url 'editar_curso' curso.id %}"><button type="button" class="btn btn-primary">EDITAR</button></a></td>
+            <td><a href="{% url 'remover_curso' curso.id %}"><button type="button" class="btn btn-danger">REMOVER</button></a></td>
+          </tr>
+        </tbody>
+      </table>
     {% empty %}
 
-    <p>Não possui produtos cadastrados</p>
+    <div class="alert alert-danger" role="alert">
+        <p>Nenhum curso cadastrado!</p>
+    </div>
     {% endfor %}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 </body>
