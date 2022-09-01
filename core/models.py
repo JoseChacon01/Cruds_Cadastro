@@ -7,7 +7,7 @@ class Produto(models.Model): #Tabela Produtos
     estilo = models.CharField('Estilo', max_length=100)
     marca = models.CharField('Marca', max_length=50)
     quantidade = models.IntegerField('Quantidade')
-    imagem = models.ImageField(upload_to='produto/')
+    
 
 
 #Tabela Cliente
