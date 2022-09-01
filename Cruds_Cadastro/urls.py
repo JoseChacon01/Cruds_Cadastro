@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from core.views import listar_produtos, cadastrar_produto, opcao_produto, editar_produto, remover_produto
+from core.views import listar_clientes, listar_produtos, cadastrar_produto, opcao_produto, editar_produto, remover_produto
+from core.views import listar_clientes, cadastrar_cliente, editar_cliente, remover_cliente
+from core.views import listar_fornecedores, cadastrar_fornecedor, editar_fornecedor, remover_fornecedor
 
 urlpatterns = [
     path('opcao_cadastro/', opcao_produto, name= 'opcao_produto'),
@@ -24,5 +26,12 @@ urlpatterns = [
     path('produto_editar/<int:id>/', editar_produto, name='editar_produto'),
     path('produto_remover/<int:id>/', remover_produto, name='remover_produto'),
     path('admin/', admin.site.urls),
-    
-]
+    path('clientes/', listar_clientes, name='listar_clientes'),#Clientes
+    path('clinte_cadastrar/', cadastrar_cliente, name='cadastrar_cliente'),
+    path('cliente_editar/<int:id>/', editar_cliente, name='editar_cliente'),
+    path('cliente_remover/<int:id>/', remover_cliente, name='remover_cliente'),
+    path('fornecedores/', listar_fornecedores, name='listar_fornecedores'), #Fornecedores
+    path('fornecedor_cadastrar/', cadastrar_fornecedor, name='cadastrar_fornecedor'),
+    path('fornecedor_editar/<int:id>/', editar_fornecedor, name='editar_fornecedor'),
+    path('fornecedor_remover/<int:id>/', remover_fornecedor, name='remover_fornecedor'),
+    ]

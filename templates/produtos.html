@@ -34,7 +34,7 @@ color: aliceblue;
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <p class="cor">Olá, Kaio! <br>Produtos </p> 
+                <p class="cor">Olá, Kaio! <br>Lista de produtos: </p> 
                
                 <li class="nav-item dropdown">
             </ul>
@@ -46,7 +46,7 @@ color: aliceblue;
         </div>
 
             <div class="social-media">
-                <a href="/perfil_prof">
+                <a href="{% url 'opcao_produto' %}">
                     <img src="{% static 'img_perfil_profissional/sair.png' %}"
                         alt="imagem para o usuario sair do site" class="media-object" width="45px">
                 </a>
